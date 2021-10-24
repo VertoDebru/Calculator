@@ -1,89 +1,114 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap');
+
 body {
     margin: 0;
     font-family: 'Zen Kurenaido', sans-serif;
     font-weight: bold;
 }
-h1 {
+
+h1,
+p {
     margin-block-start: 0;
     margin-block-end: 0;
+}
+
+h1 {
+    margin-block-end: 0.5em;
+    text-align: center;
     text-transform: uppercase;
     font-size: 1.2em;
 }
+
+span {
+    font-size: 0.8em;
+}
+
+p {
+    font-size: 1.5em;
+}
+
 button {
-    width: 55px;
-    height: 55px;
-    margin: 5px;
+    width: 70px;
+    height: 50px;
+    margin: 3px;
     border: 0;
-    border-radius: 8px;
     font-family: monospace;
     font-size: 1.5em;
-    font-weight: bold;
+    background-color: #DDD;
+    color: #999;
     cursor: pointer;
 }
 
-#calculator {
-    margin: 20vh auto 0 auto;
-    padding: 8px;
-    width: 270px;
-    background-color: #DDD;
-    border: 1px solid #CCC;
-    border-radius: 5px;
-    box-shadow: 3px 3px 5px 0px #999;
+button:active, button:hover {
+    background-color: #CCC;
+    color: #444;
 }
 
-#calculator .screen {
+main {
+    width: auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper {
+    width: 300px;
+}
+
+.screen {
     padding: 8px;
     background-color: #F2F2F2;
     border: 1px solid #CCC;
     text-align: right;
 }
-#calculator .screen .operation {
-    padding-right: 5px;
-    border: 1px solid #CCC;
-    font-size: 0.8em;
-}
-#calculator .screen .result {
-    font-size: 1.5em;
-}
 
-#calculator .buttons {
+.buttons {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-top: 10px;
+    justify-content: center;
+    margin-top: 0.5em;
 }
-#calculator .buttons button:active {
-    background-color: #999;
+
+.buttons .commands {
+    text-align: center;
 }
-#calculator .buttons .commands {
-    width: 270px;
+
+.buttons .commands button {
+    width: 290px;
+    background-color: #C00;
+    color: #FFF;
 }
-#calculator .buttons .commands button {
-    width: 45%;
+
+.buttons .commands button:active,
+.buttons .commands button:hover {
+    background-color: #900;
+    color: #CCC;
 }
-#calculator .buttons .numbers {
+
+.buttons .numbers {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 200px;
-}
-#calculator .buttons .numbers button:nth-child(10) {
-    width: 120px;
+    width: 230px;
 }
 
-#calculator .buttons .symbols {
-    width: 70px;
+.buttons .numbers button:nth-child(10) {
+    width: 146px;
+}
+
+.buttons .symbols {
+    width: 66px;
     text-align: center;
 }
 
-#calculator .buttons .symbols button {
+.buttons .symbols button {
     width: 55px;
     height: 35px;
 }
 
-#calculator .buttons .symbols button:nth-child(5) {
-    height: 70px;
+.buttons .symbols button:nth-child(5) {
+    height: 55px;
 }
