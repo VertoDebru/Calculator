@@ -42,11 +42,32 @@ function Calculator(value) {
         case "*":
         case "/":
             console.log("Operand : "+value);
-            Operation.value += value;
+            lengthOperation = Operation.value.toString().length;
+            console.log(lengthOperation);
+            if(lengthOperation > 1)
+            {
+                console.log("Length is over 1 : "+lengthOperation);
+                let a = Operation.value.toString();
+                let b = a.split("");
+                let last = b[lengthOperation-1];
+                if(last == '+' || last == '-' || last == '*' || last == '/')
+                {
+                    b.pop();
+                    console.log("--> "+b);
+                    Operation.value = b.toString();
+                    Operation.value += value;
+                }
+                else
+                    Operation.value += value;
+            }
+            else 
+                Operation.value += value;
+            
             Operation.innerHTML = Operation.value;
             break;
         case ",":
             console.log("Symbol : "+value);
+            value = ".";
             Operation.value += value;
             Operation.innerHTML = Operation.value;
             break;
