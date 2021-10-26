@@ -2,18 +2,16 @@
 var ResultScreen;
 var Operation;
 var Result;
-var num = 0;
-var formule = "0";
-var result = 0;
-
 
 function Initialize() {
     console.log(" --> Initialize...");
     ResultScreen = document.getElementsByClassName("screen")[0];
     Operation = ResultScreen.getElementsByTagName("span")[0];
     Result = ResultScreen.getElementsByTagName("p")[0];
-    Operation.innerHTML = formule;
-    Result.innerHTML = num;
+    
+    Operation.value = 0;
+    Operation.innerHTML = Operation.value;
+    Result.innerHTML = Operation.value;
     console.log(" --> Initialized!");
 }
 
@@ -31,35 +29,34 @@ function Calculator(value) {
         case 8:
         case 9:
             console.log(value + " is a number");
-            if(num == 0) {
-                num = value;
-            }
-            else {
-                num += ""+value;
-            }
-            formule = num;
-            Operation.innerHTML = formule;
-            Result.innerHTML = num;
+            if(Operation.value == 0)
+                Operation.value = value.toString();
+            else
+                Operation.value += value.toString();
+            
+            Operation.innerHTML = Operation.value;
+            Result.innerHTML = Operation.value;
             break;
         case "+":
         case "-":
         case "*":
         case "/":
             console.log("Operand : "+value);
-            formule = formule+value;
-            console.log(formule.length);
-            Operation.innerHTML = formule;
+            Operation.value += value;
+            Operation.innerHTML = Operation.value;
             break;
         case ",":
             console.log("Symbol : "+value);
-            formule = formule+value;
-            num = num+value;
-            console.log(formule.length);
-            Operation.innerHTML = formule;
-            Result.innerHTML = num;
+            Operation.value += value;
+            Operation.innerHTML = Operation.value;
             break;
         case "=":
             console.log("View result.");
+                let a = Operation.value;
+                let b = eval(a);
+                console.log(b);
+                Result.value = b;
+                Result.innerHTML = Result.value;
             break;
         default:
             console.log(" !=> Invalid value!");
@@ -68,8 +65,7 @@ function Calculator(value) {
 }
 
 function Clear() {
-    num = 0;
-    result = 0;
-    Operation.innerHTML = result;
-    Result.innerHTML = num;
+    Operation.value = 0;
+    Operation.innerHTML = Operation.value;
+    Result.innerHTML = Operation.value;
 }
