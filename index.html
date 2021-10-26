@@ -7,37 +7,37 @@
     <link rel="stylesheet" href="css/default.css" />
     <script src="scripts/calculator.js"></script>
 </head>
-<body>
+<body onload="Initialize()">
     <main>
         <div class="wrapper">
             <h1>Calculator</h1>
             <div class="screen">
-                <span>0 + 0</span>
+                <span>Formule</span>
                 <p>0</p>
             </div>
             <div class="buttons">
                 <div class="commands">
-                    <button>C</button>
+                    <button onclick="Clear()">C</button>
                 </div>
                 <div class="numbers">
-                    <button>7</button>
-                    <button>8</button>
-                    <button>9</button>
-                    <button>4</button>
-                    <button>5</button>
-                    <button>6</button>
-                    <button>1</button>
-                    <button>2</button>
-                    <button>3</button>
-                    <button>0</button>
-                    <button>,</button>
+                    <button onclick="Calculator(7)">7</button>
+                    <button onclick="Calculator(8)">8</button>
+                    <button onclick="Calculator(9)">9</button>
+                    <button onclick="Calculator(4)">4</button>
+                    <button onclick="Calculator(5)">5</button>
+                    <button onclick="Calculator(6)">6</button>
+                    <button onclick="Calculator(1)">1</button>
+                    <button onclick="Calculator(2)">2</button>
+                    <button onclick="Calculator(3)">3</button>
+                    <button onclick="Calculator(0)">0</button>
+                    <button onclick="Calculator(',')">,</button>
                 </div>
                 <div class="symbols">
-                    <button>÷</button>
-                    <button>x</button>
-                    <button>-</button>
-                    <button>+</button>
-                    <button>=</button>
+                    <button onclick="Calculator('/')">÷</button>
+                    <button onclick="Calculator('*')">x</button>
+                    <button onclick="Calculator('-')">-</button>
+                    <button onclick="Calculator('+')">+</button>
+                    <button onclick="Calculator('=')">=</button>
                 </div>
             </div>
         </div>
