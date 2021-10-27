@@ -40,30 +40,27 @@ function Calculator(value) {
         case "-":
         case "*":
         case "/":
-            lengthOperation = Operation.value.toString().length;
-            if(lengthOperation > 1)
-            {
-                let a = Operation.value.toString();
-                let b = a.split("");
-                let last = b[lengthOperation-1];
-                if(last == '+' || last == '-' || last == '*' || last == '/')
-                {
-                    b.pop();
-                    Operation.value = b.toString();
-                    Operation.value += value;
-                }
+            let lengthOperation = Operation.value.toString().length;
+            if(lengthOperation > 1) {
+                let str = Operation.value.toString();
+                let last = str.slice(lengthOperation-1);
+                let res = str.replace(last, value.toString());
+                if(isNaN(last))
+                    Operation.value = res;
                 else
                     Operation.value += value;
             }
-            else 
+            else
                 Operation.value += value;
             
             Operation.innerHTML = Operation.value;
+            Result.innerHTML = Operation.value;
             break;
         case ",":
             value = ".";
             Operation.value += value;
             Operation.innerHTML = Operation.value;
+            Result.innerHTML = Operation.value;
             break;
         case "=":
             let res = eval(Operation.value);
