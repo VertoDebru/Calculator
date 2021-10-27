@@ -28,7 +28,6 @@ function Calculator(value) {
         case 7:
         case 8:
         case 9:
-            console.log(value + " is a number");
             if(Operation.value == 0)
                 Operation.value = value.toString();
             else
@@ -41,19 +40,15 @@ function Calculator(value) {
         case "-":
         case "*":
         case "/":
-            console.log("Operand : "+value);
             lengthOperation = Operation.value.toString().length;
-            console.log(lengthOperation);
             if(lengthOperation > 1)
             {
-                console.log("Length is over 1 : "+lengthOperation);
                 let a = Operation.value.toString();
                 let b = a.split("");
                 let last = b[lengthOperation-1];
                 if(last == '+' || last == '-' || last == '*' || last == '/')
                 {
                     b.pop();
-                    console.log("--> "+b);
                     Operation.value = b.toString();
                     Operation.value += value;
                 }
@@ -66,18 +61,24 @@ function Calculator(value) {
             Operation.innerHTML = Operation.value;
             break;
         case ",":
-            console.log("Symbol : "+value);
             value = ".";
             Operation.value += value;
             Operation.innerHTML = Operation.value;
             break;
         case "=":
-            console.log("View result.");
-                let a = Operation.value;
-                let b = eval(a);
-                console.log(b);
-                Result.value = b;
-                Result.innerHTML = Result.value;
+            let res = eval(Operation.value);
+            Result.value = res;
+            Operation.value = Result.value;
+            Operation.innerHTML = Result.value;
+            Result.innerHTML = Result.value;
+            break;
+        case "<":
+            let str = Operation.value.toString();
+            Operation.value = str.slice(0, -1);
+            if(Operation.value == "")
+                Operation.value = 0;
+            Operation.innerHTML = Operation.value;
+            Result.innerHTML = Operation.value;
             break;
         default:
             console.log(" !=> Invalid value!");
