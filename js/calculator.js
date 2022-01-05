@@ -88,3 +88,5 @@ function Clear() {
     Operation.innerHTML = Operation.value;
     Result.innerHTML = Operation.value;
 }
+
+new Mycalculator().setCalculator();
