@@ -1,17 +1,6 @@
 # Calculator
-Calculator
+> Calculator
 
-# Technologies & Tools
-![](https://img.shields.io/badge/Javascript-build-blue?style=plastic&logo=javascript&logoColor=white)
-
-# Social
-<!-- Actual text -->
-Find me on : 
-
-[![Twitter][1.2]][1] | [![LinkedIn][2.2]][2]
-<!-- Icons -->
-[1.2]: https://icons.iconarchive.com/icons/limav/flat-gradient-social/16/Twitter-icon.png (Twitter)
-[2.2]: https://icons.iconarchive.com/icons/limav/flat-gradient-social/16/Linkedin-icon.png (LinkedIn)
-<!-- Links to your social media accounts -->
-[1]: https://twitter.com/TonyVerto
-[2]: https://www.linkedin.com/in/tony-vervoot/
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![javascript](https://img.shields.io/badge/Javascript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
